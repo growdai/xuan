@@ -9,26 +9,26 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public class BaseDao{
     @Autowired
-    @Qualifier("primaryJdbcTemplate")
-    private JdbcTemplate primaryJdbcTemplate;
+    @Qualifier("zcdspv4JdbcTemplate")
+    private JdbcTemplate zcdspv4JdbcTemplate;
 
     @Autowired
-    @Qualifier("secondaryJdbcTemplate")
-    private JdbcTemplate secondaryJdbcTemplate;
+    @Qualifier("adpushadtotalv4JdbcTemplate")
+    private JdbcTemplate adpushadtotalv4JdbcTemplate;
 
-    public JdbcTemplate getPrimaryJdbcTemplate() {
-        return primaryJdbcTemplate;
+    public JdbcTemplate getZcdspv4JdbcTemplate() {
+        return zcdspv4JdbcTemplate;
     }
 
-    public void setPrimaryJdbcTemplate(JdbcTemplate primaryJdbcTemplate) {
-        this.primaryJdbcTemplate = primaryJdbcTemplate;
+    public void setZcdspv4JdbcTemplate(JdbcTemplate zcdspv4JdbcTemplate) {
+        this.zcdspv4JdbcTemplate = zcdspv4JdbcTemplate;
     }
 
-    public JdbcTemplate getSecondaryJdbcTemplate() {
-        return secondaryJdbcTemplate;
+    public JdbcTemplate getAdpushadtotalv4JdbcTemplate() {
+        return adpushadtotalv4JdbcTemplate;
     }
 
-    public void setSecondaryJdbcTemplate(JdbcTemplate secondaryJdbcTemplate) {
-        this.secondaryJdbcTemplate = secondaryJdbcTemplate;
+    public void setAdpushadtotalv4JdbcTemplate(JdbcTemplate adpushadtotalv4JdbcTemplate) {
+        this.adpushadtotalv4JdbcTemplate = adpushadtotalv4JdbcTemplate;
     }
 }

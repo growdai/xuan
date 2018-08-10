@@ -12,25 +12,10 @@ import org.springframework.stereotype.Component;
 @Component("testdao")
 public class TestDao extends BaseDao{
     private final static Logger logger = LoggerFactory.getLogger(TestDao.class);
+
     public void test(){
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    while(true){
-                        try {
-                            Thread.sleep(1000*10*60);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        logger.info("------------测试--------------------");
-                    }
-                }
-            });
-            thread.start();
+        System.out.println("124");
     }
 
-    public void test2(){
-        String sql = "INSERT INTO test (name,email) VALUES ('test1','183168250722@qq.com')";
-        this.getSecondaryJdbcTemplate().batchUpdate(sql);
-    }
+
 }

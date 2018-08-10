@@ -18,29 +18,29 @@ import javax.sql.DataSource;
 @Configuration
 public class DataSourceConfig {
     private final static Logger logger = LoggerFactory.getLogger(DataSourceConfig.class);
-    @Bean(name = "primaryDataSource")
+    @Bean(name = "zcdspv4DataSource")
     @Primary
-    @ConfigurationProperties(prefix="spring.datasource.hikari.primary")
-    public DataSource primaryDataSource(){
+    @ConfigurationProperties(prefix="spring.datasource.hikari.zcdspv4")
+    public DataSource zcdspv4DataSource(){
         return DataSourceBuilder.create().build();
     }
 
 
-    @Bean(name = "secondaryDataSource")
-    @ConfigurationProperties(prefix="spring.datasource.hikari.secondary")
+    @Bean(name = "adpushadtotalv4")
+    @ConfigurationProperties(prefix="spring.datasource.hikari.adpushadtotalv4")
     public DataSource secondaryDataSource(){
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "primaryJdbcTemplate")
-    public JdbcTemplate primaryJdbcTemplate(
-            @Qualifier("primaryDataSource") DataSource dataSource) {
+    @Bean(name = "zcdspv4JdbcTemplate")
+    public JdbcTemplate zcdspv4JdbcTemplate(
+            @Qualifier("zcdspv4DataSource") DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 
-    @Bean(name = "secondaryJdbcTemplate")
-    public JdbcTemplate secondaryJdbcTemplate(
-            @Qualifier("secondaryDataSource") DataSource dataSource) {
+    @Bean(name = "adpushadtotalv4JdbcTemplate")
+    public JdbcTemplate adpushadtotalv4JdbcTemplate(
+            @Qualifier("adpushadtotalv4") DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 }
