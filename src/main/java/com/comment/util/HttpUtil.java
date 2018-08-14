@@ -17,6 +17,8 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.Map;
 
 public class HttpUtil {
@@ -324,4 +326,12 @@ public class HttpUtil {
         url = stringBuilder.toString();
         return url;
     }
+
+	public static void main(String[] args) {
+		try {
+			System.out.println(URLDecoder.decode("http://t.jutamobi.com/tracking?sid=1&adid=80324&callback=","utf-8"));
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -28,7 +28,7 @@
                 <pattern>${PATTERN}</pattern>
             </layout>
         </appender>
-        <logger name="com" level="info">
+        <logger name="com" level="debug">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="dev-file"/>
         </logger>

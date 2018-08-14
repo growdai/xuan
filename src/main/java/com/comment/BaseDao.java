@@ -16,6 +16,10 @@ public class BaseDao{
     @Qualifier("adpushadtotalv4JdbcTemplate")
     private JdbcTemplate adpushadtotalv4JdbcTemplate;
 
+    @Autowired
+    @Qualifier("zcdsptestJdbcTemplate")
+    private JdbcTemplate zcdsptestJdbcTemplate;
+
     public JdbcTemplate getZcdspv4JdbcTemplate() {
         return zcdspv4JdbcTemplate;
     }
@@ -30,5 +34,13 @@ public class BaseDao{
 
     public void setAdpushadtotalv4JdbcTemplate(JdbcTemplate adpushadtotalv4JdbcTemplate) {
         this.adpushadtotalv4JdbcTemplate = adpushadtotalv4JdbcTemplate;
+    }
+
+    public JdbcTemplate getZcdsptestJdbcTemplate() {
+        return zcdsptestJdbcTemplate;
+    }
+
+    public void setZcdsptestJdbcTemplate(JdbcTemplate zcdsptestJdbcTemplate) {
+        this.zcdsptestJdbcTemplate = zcdsptestJdbcTemplate;
     }
 }

@@ -25,10 +25,15 @@ public class DataSourceConfig {
         return DataSourceBuilder.create().build();
     }
 
-
     @Bean(name = "adpushadtotalv4")
     @ConfigurationProperties(prefix="spring.datasource.hikari.adpushadtotalv4")
-    public DataSource secondaryDataSource(){
+    public DataSource adpushadtotalv4DataSource(){
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean(name = "zcdsptest")
+    @ConfigurationProperties(prefix="spring.datasource.hikari.zcdsptest")
+    public DataSource zcdsp_testDataSource(){
         return DataSourceBuilder.create().build();
     }
 
@@ -41,6 +46,12 @@ public class DataSourceConfig {
     @Bean(name = "adpushadtotalv4JdbcTemplate")
     public JdbcTemplate adpushadtotalv4JdbcTemplate(
             @Qualifier("adpushadtotalv4") DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
+    }
+
+    @Bean(name = "zcdsptestJdbcTemplate")
+    public JdbcTemplate zcdsp_testJdbcTemplate(
+            @Qualifier("zcdsptest") DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 }
