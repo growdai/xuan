@@ -315,6 +315,7 @@ public class HttpUtil {
         if (paramsMap==null||paramsMap.isEmpty()){
             return url;
         }
+
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(url);
         for (String key:paramsMap.keySet()){
