@@ -25,13 +25,13 @@ public class TestDao extends BaseDao{
      * @return
      */
     public List<AppNewDto> appNewDtos(){
-        String sql = "SELECT * FROM app_new a WHERE a.app_name is NULL";
+        String sql = "SELECT * FROM app_new a WHERE ifnull(a.app_name2,'')=''";
         List<AppNewDto> appNewDtoList =  getZcdsptestJdbcTemplate().query(sql,new BeanPropertyRowMapper<>(AppNewDto.class));
         return appNewDtoList;
     }
 
     public void batchUpdate(List<AppNewDto> appNewDtos){
-        String sql = "UPDATE app_new SET app_name=? WHERE package_name=? ";
+        String sql = "UPDATE app_new SET app_name2=? WHERE package_name=? ";
         getZcdsptestJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement ps, int i) throws SQLException {
